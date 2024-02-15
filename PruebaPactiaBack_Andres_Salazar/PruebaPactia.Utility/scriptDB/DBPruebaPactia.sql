@@ -17,11 +17,7 @@ create table Users(
 );
 
 -- Insertar usuario para generar el token de seguridad
-insert into Users (IdUser, FullName, DocumentNumber, Email, Password) values (NEWID(), 'Juan Roncero', '123456', 'prueba@gmail.com', 'MQAyADMANAA1AA==')
-
---Ingresar con las creadenciales 
---User: prueba@gmail.com
---Password: 12345
+insert into Users (IdUser, FullName, DocumentNumber, Email, Password) values (NEWID(), 'Prueba Tecnica Andres Salazar', '123456', 'prueba@gmail.com', 'MQAyADMANAA1AA==')
 
 -- Procedimiento almacenado para registros tareas 
 CREATE PROCEDURE SP_CreateTask
@@ -68,7 +64,7 @@ CREATE PROCEDURE SP_DeleteTaskById
 @IdTask uniqueidentifier
 )
 AS
-select IdTask, NameTask, StateTask from Tasks where IdTask = @IdTask
+delete Tasks where IdTask = @IdTask
 
 -- Procedimiento almacenado para consultar si la credenciales y el usuario es correcto
 CREATE PROCEDURE SP_GetUserLogin
